@@ -171,8 +171,8 @@ class ComputerPlayer {
 
 const startButton = document.getElementById("startNew");
 startButton.addEventListener("click", function(evt){
- let playerOne = new Player(document.getElementById("playerOne").value) 
- let playerTwo = new ComputerPlayer(document.getElementById("playerTwo").value) 
+ let playerOne = new Player(document.getElementById("playerOne").value.split(" ").join("")) 
+ let playerTwo = new ComputerPlayer(document.getElementById("playerTwo").value.split(" ").join("")) 
  new Game(playerOne, playerTwo)
  let board = document.getElementById("board")
  if(board.classList.value === "noClicking"){
