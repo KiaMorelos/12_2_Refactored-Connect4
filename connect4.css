@@ -1,10 +1,13 @@
 body {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:'Bungee', Helvetica, sans-serif;
   text-align: center;
+  background-color: azure;
 }
 
 h1 {
   text-align: center;
+  font-size: 5vw;
+  margin-bottom: 0;
 }
 
 /* game board table */
@@ -12,14 +15,21 @@ h1 {
   display:flex;
   justify-content: center;
   align-items: center;
-  padding-top:6%;
-
+  padding-top:2%;
 }
+
+#board {
+  background-color: yellow;
+  border-radius: 10%;
+  padding:1%;
+}
+
 #board td {
   width: 50px;
   height: 50px;
   border: solid 1px #666;
-  background-color: gainsboro;
+  background-color: #fff;
+  border-radius: 100%;
 }
 
 /* pieces are div within game table cells: draw as colored circles */
@@ -30,7 +40,24 @@ h1 {
   width: 80%;
   height: 80%;
   border-radius: 50px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  bottom: 2%;
+  position: relative;
+  animation: dropIn 1s;
+  animation-timing-function: cubic-bezier(0.1, -0.2, 0.2, 0);
+}
+
+
+@keyframes dropIn {
+  0% {bottom: 300px; }
+
+  25% { bottom: 200px; }
+
+  50% { bottom: 100px; }
+
+  75% { bottom: 50px; }
+
+  100% { bottom: 0; }
 }
 
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
@@ -47,10 +74,16 @@ button {
   border-radius: 20px;
   background-color: skyblue;
   border: none;
-  margin: 0 auto;
+  margin: 2% auto;
   color:#000;
   font-weight: 900;
-  padding:2%;
+  padding:1%;
+}
+
+input {
+  padding:1%;
+  border-radius: 20px;
+  border:1px solid blue;
 }
 
 /* column-top is table row of clickable areas for each column */
@@ -67,4 +100,8 @@ button {
 
 .noClicking {
 pointer-events: none;
+}
+
+.hidden {
+  display:none;
 }

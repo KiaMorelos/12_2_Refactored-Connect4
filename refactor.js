@@ -160,13 +160,26 @@ class Player {
   }
 }
 
+class ComputerPlayer {
+  constructor(color){
+  this.color = color;
+  }
+   pickRrandomCol() {
+    const randomNum = Math.floor(Math.random() * 7 + 1)
+ } 
+}
+
 const startButton = document.getElementById("startNew");
 startButton.addEventListener("click", function(evt){
  let playerOne = new Player(document.getElementById("playerOne").value) 
- let playerTwo = new Player(document.getElementById("playerTwo").value) 
+ let playerTwo = new ComputerPlayer(document.getElementById("playerTwo").value) 
  new Game(playerOne, playerTwo)
  let board = document.getElementById("board")
  if(board.classList.value === "noClicking"){
    board.classList.remove("noClicking")
  } 
+
+ if(board.classList.value === "hidden"){
+  board.classList.remove("hidden")
+} 
 });
