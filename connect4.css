@@ -51,18 +51,18 @@ h1 {
   bottom: 2%;
   position: relative;
   animation: dropIn 1s;
-  animation-timing-function: cubic-bezier(0.1, -0.2, 0.2, 0);
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 }
 
 
 @keyframes dropIn {
-  0% {bottom: 300px; }
+  0% {bottom: 300%; }
 
-  25% { bottom: 200px; }
+  25% { bottom: 200%; }
 
-  50% { bottom: 100px; }
+  50% { bottom: 100%; }
 
-  75% { bottom: 50px; }
+  75% { bottom: 50%; }
 
   100% { bottom: 0; }
 }

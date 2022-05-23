@@ -166,20 +166,27 @@ class ComputerPlayer {
   }
    pickRrandomCol() {
     const randomNum = Math.floor(Math.random() * 7 + 1)
+    return randomNum
  } 
 }
 
 const startButton = document.getElementById("startNew");
 startButton.addEventListener("click", function(evt){
- let playerOne = new Player(document.getElementById("playerOne").value.split(" ").join("")) 
- let playerTwo = new ComputerPlayer(document.getElementById("playerTwo").value.split(" ").join("")) 
- new Game(playerOne, playerTwo)
- let board = document.getElementById("board")
- if(board.classList.value === "noClicking"){
-   board.classList.remove("noClicking")
- } 
+  let playerOne = new Player(document.getElementById("playerOne").value.split(" ").join("")); //do this so that if someone enters a color with spaces, it converts easily to html color
+  let playerTwo = new Player(document.getElementById("playerTwo").value.split(" ").join(""));//do this so that if someone enters a color with spaces, it converts easily to html color
+ 
+  new Game(playerOne, playerTwo)
+  
+  const h1 = document.querySelector("h1")
+  h1.innerText = "Game Started";
+  h1.style.color = "black";
+  let board = document.getElementById("board");
+  
+  if(board.classList.value === "noClicking"){
+    board.classList.remove("noClicking");
+  } 
 
- if(board.classList.value === "hidden"){
-  board.classList.remove("hidden")
-} 
+  if(board.classList.value === "hidden"){
+    board.classList.remove("hidden");
+  } 
 });
